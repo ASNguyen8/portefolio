@@ -1,10 +1,16 @@
 import os
 import streamlit as st
 
+from Accueil import my_sidebar
+
+
 def st_write_file(filename: str):
     filepath = os.path.join("docs", "formations", filename)
     with open(filepath, 'rt', encoding='utf-8') as file:
         st.markdown(file.read())
+
+
+my_sidebar()
 
 st.title("Formations")
 with st.expander("2021 - 2023 : Master MAS, parcours CMI ISI"):
