@@ -1,8 +1,6 @@
 import os
 import streamlit as st
 
-from Accueil import my_sidebar
-
 
 def st_write_file(filename: str):
     filepath = os.path.join("docs", "formations", filename)
@@ -10,7 +8,32 @@ def st_write_file(filename: str):
         st.markdown(file.read())
 
 
-my_sidebar()
+st.set_page_config(
+    page_title="Portefolio/Formations",
+    page_icon="🗃️",
+    initial_sidebar_state="expanded"
+)
+
+st.sidebar.header('NGUYEN Alexandre')
+st.sidebar.markdown("""
+📞 : 06.33.92.62.05
+
+📧 : alex33nguyen@gmail.com
+""")
+with open("docs/_CV_Alex.pdf", 'rb') as file:
+    st.sidebar.download_button(
+        label='Télécharger mon CV', 
+        data=file.read(), 
+        file_name="CV_Alexandre_NGUYEN.pdf"
+        )
+
+c1, c2 = st.sidebar.columns(2)
+c1.markdown("""
+[![Profil LinkedIn](https://img.icons8.com/fluency/48/linkedin.png)](https://www.linkedin.com/in/alexandre-nguyen-716394247/)
+""")
+c2.markdown("""
+[![Page GitHub](https://img.icons8.com/material-outlined/48/000000/github.png)](https://github.com/ASNguyen8)
+""")
 
 st.title("Formations")
 with st.expander("2021 - 2023 : Master MAS, parcours CMI ISI"):
