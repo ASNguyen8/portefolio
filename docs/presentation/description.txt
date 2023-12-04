@@ -1,1 +1,15 @@
-C'est moi !
+# Bonjour à vous !
+
+##### Enchanté que vous puissiez me lire ! Je m'appelle Alexandre et je suis actuellement en recherche d'emploi dans le secteur de la Data Science.
+
+Aujourd'hui, nous sommes nombreux à utiliser des outils qui génèrent, récupèrent et exploitent des données de toute nature. L'utilisation de ces données permet de répondre à répondre à des problématiques et d'orienter la prise de décision, notamment en entreprise. La Data Science permet, grâce à ses divers outils, de faire face à ces problématiques liées aux données, allant de la gestion de volumes croissants de données variées (Big Data) à la prédiction, en passant par l'analyse statistique.
+
+À mon sens, le Data Scientist agit en collaboration avec l'entreprise et ses partenaires. Dans un premier temps, il a pour rôle d'écouter et de comprendre les besoins des ces derniers ainsi que leurs contraintes. Ensuite, un choix éclairé dans les outils de Data Science permet de faire face aux divers problématiques techniques. Enfin, le Data Scientist doit pouvoir synthétiser et traduire son travail de façon à rendre ses résultats clairs et intelligibles pour ses collaborateurs. 
+Par son caractère multidisciplinaire, le champ de la Data Science donne la possibilité de côtoyer et d'apprendre de plusieurs domaines différents tel la santé, l'électronique ou encore l'actuariat. Cela rend le métier extraordinairement stimulant et épanouissant intellectuellement.
+
+Formé dans les domaines des **mathématiques**, en particulier de la statistique, et de **l'informatique**, mon parcours m'a apporté d'amples connaissances théoriques et pratiques en rapport avec la Data Science. J'ai pu les perfectionner au travers de divers projets qui se sont tous achevés par une présentation orale.
+
+Curieux, sérieux et travailleur, j'ai pu développer, conjointement à mes compétences, un intérêt certain pour les mathématiques et l'informatique (en particulier le langage Python) ainsi que mon appétence à résoudre des problématiques de Data Science. 
+De nature respectueuse et toujours à l'écoute, je souhaite désormais mettre à profit mes compétences au sein d'une collaboration en tant que Data Scientist.
+_ _ _
+Dans un cadre plus personnel, je pratique le noble art martial qu'est le Karaté au sein du club [AMV Karaté](http://amvkarate.fr/) à Villenave D'Ornon. Ayant récemment obtenu le grade de 3ème Dan pour la ceinture noire, je m'entraîne généralement 2 fois par semaine. Aussi, j'aide depuis plusieurs années à l'encadrement des jeunes karatékas de mon club pendant les cours avec un des professeurs, et ce deux fois par semaine. Ancien compétiteur durant ma jeunesse, je coache nos jeunes de tout âge durant les compétitions départementales et régionales.

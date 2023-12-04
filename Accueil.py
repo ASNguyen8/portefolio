@@ -40,6 +40,5 @@ with open("docs/presentation/coordonnees.txt", 'rt', encoding='utf-8') as file:
 
 photo.image("img/photo_rognee.jpg")
 
-st.title("Présentation")
-with open("docs/presentation/description.txt", 'rt') as file:
+with open("docs/presentation/description.txt", 'rt', encoding='utf-8') as file:
     st.markdown(file.read())
