@@ -20,8 +20,10 @@ st.sidebar.markdown("""
 """)
 with open("docs/_CV_Alex.pdf", 'rb') as file:
     st.sidebar.download_button(
-        label='Télécharger mon CV', data=file.read(), 
-        file_name="CV_Alexandre_NGUYEN.pdf")
+        label='Télécharger mon CV', 
+        data=file.read(), 
+        file_name="CV_Alexandre_NGUYEN.pdf"
+        )
 
 c1, c2 = st.sidebar.columns(2)
 c1.markdown("""
