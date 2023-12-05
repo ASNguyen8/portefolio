@@ -14,6 +14,14 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+st.markdown("""
+<style>
+    .stMarkdown {
+        text-align: justify;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.sidebar.header('NGUYEN Alexandre')
 st.sidebar.markdown("""
 📞 : 06.33.92.62.05
