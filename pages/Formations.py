@@ -47,7 +47,7 @@ st.title("Formations")
 with st.expander("2021 - 2023 : Master MAS, parcours CMI ISI"):
     st_write_file("master.txt")
 
-with st.expander("2018 - 2021 : Licence Informatique, parcours CMI ISI"):
+with st.expander("2018 - 2021 : Licence Mathématiques, parcours CMI ISI"):
     st_write_file("licence_info.txt")
 
 with st.expander("2016 - 2018 : PACES"):
