@@ -1,3 +1,23 @@
-[Lien vers le site officiel](https://uf-mi.u-bordeaux.fr/cmi-isi/)
+##### [Lien vers le site officiel](https://uf-mi.u-bordeaux.fr/cmi-isi/)
 
-Description -
+Le Cursus de Master en Ingénierie ISI est une formation de l’Université de Bordeaux, créée en 2014, en science des données. Il permet d’acquérir une double compétence de type ingénieur en statistique et en informatique en vu du métier de Data Scientist, actuellement en forte croissance. 
+
+Les cours et l’encadrement de projets sont principalement assurés par des enseignants-chercheurs de [l’UFMI](https://math-interactions.u-bordeaux.fr/), de [l’Institut de Mathématiques de Bordeaux](https://www.math.u-bordeaux.fr/imb/spip.php) et du [Laboratoire Bordelais de Recherche en Informatique](https://www.labri.fr/). Des professionnels extérieurs à l’Université de Bordeaux interviennent également sous la forme de conférences, cours ou encadrement de projets dans un but de formation à la science des données en entreprise.  
+Les domaines d'expertises visés vont être :
+ - la gestion de base de données (SQL/ No SQL)
+ - l'extraction, la transformation et le chargement de données massives (ETL)
+ - le traitement des données : sélection de variables, gestion des valeurs manquantes ou extrêmes
+ - la visualisation de données via des graphiques pertinents
+ - l'analyse statistique de données en grande dimension 
+ - l'apprentissage automatique
+ - l'extraction d'indicateurs concrets pour l'élaboration de stratégies décisionnelles
+ - Optimisation pour des structures de grande taille (matrices, graphes, réseaux)
+
+À l'intersection des départements de Mathématiques, d'Informatique et de Statistiques de l'Université de Bordeaux, la formation compte de nombreux cours en commun avec les cours de *Licence Mathématiques & Informatique* pendant les trois premières années et est rattachée au [Master MSS](https://uf-mi.u-bordeaux.fr/MSS/) pendant les deux dernières années.
+
+Ainsi, des cours en mathématiques tels l'analyse ou l'algèbre linéaire seront dispensés aux étudiants de CMI ISI. On compte aussi des cours de probabilité/statistique et des cours de programmation dans plusieurs langages. D'autres cours de management, d'éthique ou encore de communication sont dispensés en plus par semestre. Un étudiant pourra ainsi obtenir un maximum 36 ECTS par semestre s'il est en CMI ISI, sinon 30.  
+Cela donne une charge de travail plus conséquente aux élèves de CMI ISI, ce qui permet d'apprendre à s'organiser pour travailler efficacement.
+
+Enfin, à l'instar des écoles d'ingénieur, le CMI oblige ses étudiants à aller une fois à l'étranger (à partir de la 3ème année de Licence). On peut alors soit faire un semestre d'études dans une université étrangère en Erasmus, soit une année d'étude entière ou alors un stage pendant les mois d'été dans une entreprise à l'étranger. Cette mobilité à l'internationale est exigée pour l'obtention du diplôme de la formation, en plus d'un certain niveau à une certification d'un niveau B2 minimum en anglais (TOEIC ou TOEFL). 
+
+Le CMI ISI a donc pour objectif de former des experts en Ingénierie mathématique, Statistique et Informatique, capable de gérer des charges de travail soutenues et opérationnels tant sur le territoire français qu'à l'internationale.

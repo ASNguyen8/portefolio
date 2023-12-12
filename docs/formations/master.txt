@@ -1,3 +1,39 @@
 Master Mathématiques Appliquées en Statistiques, parcours Ingénierie de la Statistique et de l'Informatique effectuée à l'université de Bordeaux ([Collège Sciences et Technologies](https://www.u-bordeaux.fr/universite/organisation-et-fonctionnement/composantes-de-formation/college-sciences-et-technologies)).
 
 Mention Bien
+
+_ _ _
+_ _ _
+
+##### 1ère année de Master
+=> Connaissances théoriques en probabilité et en statistiques
+
+ - **Outils de simulation** : simulation de variables/processus aléatoires, Loi Forte des Grands Nombres, Théorème Central Limite
+ - **Probabilités et statistique** : variables/vecteurs aléatoires, estimateur du maximum de vraisemblance, biais et variance, convergences de variables aléatoires, intervales de confiance, vecteurs gaussiens
+ - **Base de données relationnelles** : algèbre relationnelle, formes normales, schéma Entités-Associations, commandes SQL (requêtes SQL, vues, fonction d'aggrégation, triggers)
+ - **Analyse, Classification et Indexation des Données** : descente de gradient, régression linéaire, KNN, classifieur Bayésien (naïf), Analyse en Composantes Principales, Analyse Discriminante Linéaire, Arbres de décision et Forêts aléatoires
+ - **Modèle linéaire et test d'hypothèse** : régression linéaire, tests d'égalité des moyennes ou de variances (dans un cadre d'homo/hétéroscédasticité)
+ - **Représentation de Données et Statistique Multidimensionnelle** : Analyse en Composantes Principales (ACP)
+ _ _ _
+ - **Martingales et algorithmes stochastiques** : algorithme du gradient, de Robbins-Monro, de Kiefer-Wolkowitz
+ - **Statistique Non Paramétriques** : test statistiques (Wilcoxon/Mann-Whitney, Kruskal-Wallis, Kolmogorov-Smirnov), estimation non paramétrique d'une densité
+ - **Optimisation Convexe** : optimisation sans ou sous contraintes de fonctions convexes et algorithmes de descente de gradient
+ - **Chaînes de Markov** : marches aléatoires, classes communicantes, théorèmes limites
+ - **Statistiques Bayésiennes** : inférence bayésienne, Transformée de Fourrier Discrète 2D, risque bayésien, méthodes de Monte-Carlo, algorithmes de Metropolis-Hastings, de Gibbs
+ - **Projet CMI ISI** : constituer une base de données No-SQL (sur MongoDB) à partir des articles de recherche à récupérer sur [l'API de Hal](https://api.archives-ouvertes.fr/docs) → étude des liens entre les articles et/ou auteurs
+ _ _ _
+ _ _ _
+
+##### 2ème année de Master
+=> Méthodologie de Machine Learning (découpages apprentissage/test, validation croisée, algorithmes, évaluation de la performance d'un modèle)
+
+ - **Modèles linéaires mixtes et applications en bio-statistique** : modèles linéaires mixtes généralisés, algorithme Espérance-Maximisation
+ - **Transport Optimal** : problèmes de Monge, de Kantorovich, transport d'une mesure de probabilité vers une seconde, quantiles multivariés
+ - **Introduction à l'apprentissage profond** : modèle du Perceptron, réseaux de neurones denses (DenseNet), convolutif (ConvNet) et récurrents (RNN, GRU, LSTM) + projet Kaggle
+ - **Science des données et des réseaux** : Tulip, notion de centralité, clustering
+ - **Optimisation en grande dimension** : descente de gradient pour des fonctions convexes, Heavy ball, accélération de Nesterov, algorithmes stochastiques pour la régression linéaire, logistique, l'ACP récursive
+ - **Apprentissage supervisé** : performance d'une règle de décision (matrice de confusion, score, courbe ROC, courbe LIFT), KNN, analyse discriminante linéaire et quadratique, classifieur bayésien (naïf), régression logistique, arbres de décision et forêts aléatoires
+ - **Analyse de données en grandes dimensions** : sélection de variables, régression LASSO, Ridge, ElasticNet, modèles graphiques
+ _ _ _
+ - **Stage** : voir section **Projets**
+ - **Projet OpenData** : voir section **Projets**

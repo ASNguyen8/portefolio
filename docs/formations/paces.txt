@@ -1,1 +1,22 @@
-PACES (Première Année Commune aux Etudes de Santé) à [l'université de Bordeaux Segalen](https://fr.wikipedia.org/wiki/Universit%C3%A9_Bordeaux-II) - concours de médecine et de kinésithérapie.
+PACES (Première Année Commune aux Etudes de Santé) à [l'Université de Bordeaux Segalen](https://fr.wikipedia.org/wiki/Universit%C3%A9_Bordeaux-II) - concours de médecine et de kinésithérapie.
+
+##### Modules étudiés
+
+ - **Chimie** : modèle atomique et interactions inter-atomiques/moléculaires, thermodynamique, chimie organique, **biochimie**
+ - **Biologie cellulaire** : techniques d'histologie, fécondation, 4 premières semaines de développement in utero, communication cellulaire
+ - **Physique** : optique, rayonnement particulaire, mécanique des fluides, pH, thermorégulation, oxydo-réduction 
+ - **Épidémiologie** : méthodes et tests statistiques (Khi², Student, etc.)
+ - **Anatomie** : étude descriptive et fonctionnelle de l'appareil musculo-squelettique du corps humain et de son innervation
+ - **Médicaments** : présentation des phases de création, de distribution et de régulation du médicament
+ - **UE7** : psychologie du stress, anthropologie, sociologie du genre, sociologie de la profession médicale, histoire de la médecine, étude des champignons, taxinomie des espèces
+
+##### Modules spécifiques au concours de médecine
+
+ - **Maïeutique** : anatomie du bassin et appareils génitaux
+ - **Médecine** : organogenèse
+
+##### Modules spécifiques au concours de kinésithérapie
+
+ - Anatomie descriptive et fonctionnelle du membre supérieur ou thoracique et de la colonne vertébrale
+ - Anatomie descriptive et fonctionnelle du membre pelvien
+ - Biomécanique 

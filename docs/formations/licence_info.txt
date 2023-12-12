@@ -1,5 +1,21 @@
 Licence Informatique parcours CMI ISI effectuée à l'université de Bordeaux ([Collège Sciences et Technologies](https://www.u-bordeaux.fr/universite/organisation-et-fonctionnement/composantes-de-formation/college-sciences-et-technologies)).
 
-**Semestre 6 (2ème semestre de la 3ème année de licence) effectué à l'université de Bristol, Royaume-Uni.**
-
 Mention Assez Bien
+
+##### Semestre 1 à 5
+
+ - **Programmation** : Python, structure de données, bases de données (SQL), introduction à C, Java, HTML, CSS, PHP
+ - **Analyse** : suites, continuité/dérivation de fonctions réelles, intégrales (de Riemann et impropres), séries et suites de fonctions
+ - **Algèbre linéaire** : systèmes linéaires, espaces vectoriels, applications linéaires et réduction des endomorphismes, arithmétique, groupes, anneaux, corps, polynômes
+ - **Probabilités** : variables aléatoires à densité, indépendance et théorèmes limites (ex: TCL)
+ - **Réseaux informatiques** : DNS, adresse IP, protocoles de communication
+ - **Optimisation** : programmation linéaire, algorithme du Simplex
+ - **Algorithmique des graphes** : algorithmes de Dijkstra, Kruskal, de parcours en profondeur d'un graphe, du plus court chemin (avec/sans poids)
+ - **Équations différentielles** : calcul différentiel, résolution d'équations différentielles
+ - **Intégration de Lebesgue** : tribus, théorie de la mesure, propriétés des intégrales de Lebesgue
+
+##### Semestre 6 : Erasmus à l'Université de Bristol, Royaume-Uni
+
+ - **Mathematical Programming** : Jupyter Notebook environment, gradient descent, numerical integration, probabilities and statistics
+ - **Probability 2** : random variables (discrete and continuous), Random Walk, Markov Chain, Poisson process, Martingales, Brownian motion
+ - **Theory of Inference** : Linear models, Maximum Likelihood Estimation, Bayesian Inference, MCMC
