@@ -1,4 +1,4 @@
-# Bonjour à vous !
+# Bonjour !
 
 ##### Enchanté que vous puissiez me lire ! Je m'appelle Alexandre et je suis actuellement en recherche d'emploi dans le secteur de la Data Science.
 

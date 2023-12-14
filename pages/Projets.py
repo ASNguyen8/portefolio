@@ -45,7 +45,7 @@ c2.markdown("""
 
 st.title("Projets")
 
-with st.expander("Stage"):
+with st.expander("Stage de fin de master (du 20 Février 2023 au 20 Juillet 2023)"):
     st_write_file("stage.txt")
     stage1, stage2 = st.columns(2)
     with open("docs/Rapport_stage.pdf", 'rb') as file:

@@ -1,1 +1,16 @@
 Accidents de la route
+_ _ _
+Durant mon second semestre de ma seconde année de [Master MAS](/Formations), j'ai dû effectuer un projet portant sur des données ouvertes. L'objectif de ce projet étant d'aller chercher un ensemble de données en libre accès sur Internet (ex: [DataGouv.fr](https://www.data.gouv.fr/fr/)), les mettre en forme afin de finalement les analyser. J'ai donc pu travailler sur des données d'accidents de la route entre 2005 et 2021.
+
+##### Problématique
+
+_ _ _
+##### Données utilisées
+
+_ _ _
+##### Méthodologie
+
+_ _ _
+##### Résultats
+
+_ _ _

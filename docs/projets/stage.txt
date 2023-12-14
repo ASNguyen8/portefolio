@@ -1,1 +1,23 @@
-IHU Liryc
+_ _ _
+Dans le cadre de mon [Master MAS](/Formations), j'ai dû effectuer un stage d'une durée de 4 à 6 mois en entreprise. Je l'ai donc effectué à l'IHU Liryc sous la tutelle du professeur Rémi Dubois.
+
+Pour présenter rapidement le Liryc, c'est un Institut Hospitalo Universitaire (IHU) situé dans le complexe hospitalier Xavier Arnozan à Pessac. Il s'agit d'un institut dédié à la recherche sur le cœur, son fonctionnement et les pathologies du rythme cardiaque. Il compte plusieurs équipes aux spécialités variées qui travaillent à faire progresser les avancées scientifiques dans le domaine du cœur.
+
+##### Problématique
+Chez certains patients souffrant de pathologies du rythme cardiaque, un défibrillateur leur est transplanté afin de surveiller, grâce à un algorithme embarqué, leur activité cardiaque et de pouvoir appliquer une thérapie si nécessaire. Les tracés de l'activité électrique du cœur des patients, mesurée à la surface de l'organe, sont appelés des **électrogrammes** (EGM) et sont remontés aux constructeurs des défibrillateurs puis récupérés par le Centre Hospitalier Universitaire (CHU) de Bordeaux pour des analyses ultérieures.  
+Parmi les pathologies cardiaques remontées par le défibrillateur, la fibrillation auriculaire (FA) n'est pas traitée par ce dernier. Or, un signal bruité ou un rythme cardiaque rapide peut être pensé comme conséquence d'une fibrillation auriculaire : l'appareil détectera alors "à tort" une FA au lieu de la bonne pathologie. Ceci peut aussi traduire un dysfonctionnement du défibrillateur. Dans les deux cas, le patient encourt de potentielles graves conséquences.  
+Afin de différencier les vraies FA de celles détectées à tort sur les EGM, des médecins ont été embauchés pour faire le tri. Sur des échantillons de plus de 10,000 enregistrements, on devine que cette étape de classification manuelle requiert énormément de temps.
+
+Au sein de l'équipe de traitement du signal, je suis donc chargé, au cours de ce stage, de trouver une développer un algorithme de Machine Learning permettant d'automatiser cette classification d'EGM.
+_ _ _
+##### Données utilisées
+La base de données que j'ai utilisé comporte 10,172 [électrogrammes](img/af_algo.png), possédant chacun deux composantes : l'activité électrique (au cours du temps) au niveau des oreillettes (voie auriculaire) et au niveau des ventricules (voie ventriculaire). Parmi ces 10,172 enregistrements labellisés manuellement par 3 médecins différents, on compte :
+ - 8057 de classe 1 (l'EGM présente bien une FA);
+ - 2115 de classe 0 (l'EGM ne présente pas de FA).
+
+_ _ _
+##### Méthodologie
+
+_ _ _
+##### Résultats
+_ _ _
