@@ -1,23 +1,68 @@
-_ _ _
+# Contexte
 Dans le cadre de mon [Master MAS](/Formations), j'ai dû effectuer un stage d'une durée de 4 à 6 mois en entreprise. Je l'ai donc effectué à l'IHU Liryc sous la tutelle du professeur Rémi Dubois.
 
-Pour présenter rapidement le Liryc, c'est un Institut Hospitalo Universitaire (IHU) situé dans le complexe hospitalier Xavier Arnozan à Pessac. Il s'agit d'un institut dédié à la recherche sur le cœur, son fonctionnement et les pathologies du rythme cardiaque. Il compte plusieurs équipes aux spécialités variées qui travaillent à faire progresser les avancées scientifiques dans le domaine du cœur.
+Pour présenter rapidement le Liryc, il s'agit d'un Institut Hospitalo Universitaire (IHU) situé dans le complexe hospitalier Xavier Arnozan à Pessac dédié à la recherche sur le cœur, son fonctionnement et les pathologies du rythme cardiaque. Il compte plusieurs équipes aux spécialités variées qui travaillent à faire progresser les avancées scientifiques dans le domaine du cœur.
 
-##### Problématique
-Chez certains patients souffrant de pathologies du rythme cardiaque, un défibrillateur leur est transplanté afin de surveiller, grâce à un algorithme embarqué, leur activité cardiaque et de pouvoir appliquer une thérapie si nécessaire. Les tracés de l'activité électrique du cœur des patients, mesurée à la surface de l'organe, sont appelés des **électrogrammes** (EGM) et sont remontés aux constructeurs des défibrillateurs puis récupérés par le Centre Hospitalier Universitaire (CHU) de Bordeaux pour des analyses ultérieures.  
+# Problématique
+Des défibrillateurs sont implantés chez des patients souffrant de pathologies du rythme cardiaque. Grâce à leur algorithme embarqué, ces défibrillateurs surveillent l'activité cardiaque des patients et peuvent appliquer une thérapie si nécessaire. Les tracés de l'activité électrique du cœur des patients, mesurée à la surface de l'organe, sont appelés des **électrogrammes** (EGM) et sont remontés aux constructeurs des défibrillateurs puis récupérés par le Centre Hospitalier Universitaire (CHU) de Bordeaux pour des analyses ultérieures.  
 Parmi les pathologies cardiaques remontées par le défibrillateur, la fibrillation auriculaire (FA) n'est pas traitée par ce dernier. Or, un signal bruité ou un rythme cardiaque rapide peut être pensé comme conséquence d'une fibrillation auriculaire : l'appareil détectera alors "à tort" une FA au lieu de la bonne pathologie. Ceci peut aussi traduire un dysfonctionnement du défibrillateur. Dans les deux cas, le patient encourt de potentielles graves conséquences.  
 Afin de différencier les vraies FA de celles détectées à tort sur les EGM, des médecins ont été embauchés pour faire le tri. Sur des échantillons de plus de 10,000 enregistrements, on devine que cette étape de classification manuelle requiert énormément de temps.
 
-Au sein de l'équipe de traitement du signal, je suis donc chargé, au cours de ce stage, de trouver une développer un algorithme de Machine Learning permettant d'automatiser cette classification d'EGM.
-_ _ _
-##### Données utilisées
-La base de données que j'ai utilisé comporte 10,172 [électrogrammes](img/af_algo.png), possédant chacun deux composantes : l'activité électrique (au cours du temps) au niveau des oreillettes (voie auriculaire) et au niveau des ventricules (voie ventriculaire). Parmi ces 10,172 enregistrements labellisés manuellement par 3 médecins différents, on compte :
+Au sein de l'équipe de traitement du signal, je suis donc chargé, au cours de ce stage, de trouver une développer un algorithme basé sur une stratégie de Machine Learning permettant d'automatiser cette classification d'EGM.
+
+# Données utilisées
+La base de données que j'ai utilisé comporte 10,172 électrogrammes, possédant chacun deux composantes : l'activité électrique (au cours du temps) au niveau des oreillettes (voie auriculaire) et au niveau des ventricules (voie ventriculaire). Parmi ces 10,172 enregistrements labellisés manuellement par 3 médecins différents, on compte :
  - 8057 de classe 1 (l'EGM présente bien une FA);
  - 2115 de classe 0 (l'EGM ne présente pas de FA).
 
-_ _ _
-##### Méthodologie
+La longueur des EGM varie entre 513 et 5137 points de données.
 
-_ _ _
-##### Résultats
-_ _ _
+Les données des EGM sont stockés dans une arborescence sur le serveur du Liryc sous la forme suivante :  
+├── dossier_EGM  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── 0  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <EGM_classe_0.txt>  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── 1  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <EGM_classe_1.txt>  
+
+<img>img/af_algo.png|Exemple d'EGM : la voie auriculaire est tracée en noir et la voie ventriculaire en bleu. Les évènements cardiaques détectés par l'appareil sont dénotés par des marqueurs sur l'axe en bas.|<img>
+
+# Méthodologie
+
+En suivant les directives de mon tuteur de stage, l'algorithme que je devais développer était un modèle de réseau de neurones. Celui-ci prend en entrée les deux voies des EGM sous un unique format (signaux de même taille) et retourne en sortie la probabilité d'appartenir à la classe 0 ou 1. 
+
+La longueur des signaux étant variable, j'ai d'abord appliqué un zero-padding jusqu'à une longueur à 8192 (n'engendre aucune perte d'information) afin de les uniformiser.
+
+J'ai ensuite procédé à un découpage apprentissage/test des données :
+ - 80% de données serviront pour l'apprentissage du modèle
+ - 20% pour évaluer ses performances.  
+
+Le déséquilibre initial des classes est conservé dans les deux sous ensembles de données.
+
+Un modèle de réseau de neurones va avoir plusieurs hyperparamètres à calibrer : 
+ - son architecture (nombre de couche et nombre de neurones par couche)
+ - l'algorithme d'optimisation à utiliser pour l'entraînement et son taux d'apprentissage
+ - la taille des batchs de données à utiliser pendant l'entraînement
+ - des poids associés à chaque classe pour l'entraînement (rajoutés ici pour compenser le déséquilibre des classes)
+
+Pour trouver la meilleure architecture, je me suis inspiré de l'architecture des [ResNet](https://fr.wikipedia.org/wiki/R%C3%A9seau_neuronal_r%C3%A9siduel) qui comportent jusqu'à 100 couches de neurones. Cependant, je me suis limité ici à une dizaine car les données des EGM ne sont pas très complexes. En effet, une architecture trop riche en couche de neurones risque de rapidement surapprendre les données d'apprentissage, en plus d'avoir un temps d'entraînement/d'inférence plus élevé.
+
+| Hyperparamètre | Valeurs testées |
+|--|--|
+| Algorithme d'optimisation | Adam, SGD, SGD avec momentum à 0.9 et 0.99 |
+| Taux d'apprentissage | $10^{-1}$, $10^{-2}$, $10^{-3}$, $10^{-4}$, $10^{-5}$, $10^{-6}$, $10^{-7}$ |
+| Taille des batchs | 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024 |
+| Poids associé à la classe 1 | 0.5, 0.6, 2/3, 0.7, 0.8, 0.9 |
+ 
+Le poids associé à la classe 0 a pour valeur (1 - poids associé à la classe 1).
+
+Toutes les valeurs des hyperparamètres ont été sélectionnées par **validation croisée 5-folds**.
+
+À noter qu'il existe d'autres paramètres : les poids de chaque couche de neurones. Cependant, ils sont initialisés aléatoirement pour un modèle puis ajustés automatiquement lors de l'étape de rétropropagation à l'entraînement.
+
+# Validation croisée 5-Folds
+
+L'ensemble de données d'apprentissage est découpé en 5 sous ensembles de données (5 folds), comme pour le découpage apprentissage/test.
+
+Comme les poids des couches d'un
+
+# Résultats
