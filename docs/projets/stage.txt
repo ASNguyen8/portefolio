@@ -61,8 +61,52 @@ Toutes les valeurs des hyperparamètres ont été sélectionnées par **validati
 
 # Validation croisée 5-Folds
 
-L'ensemble de données d'apprentissage est découpé en 5 sous ensembles de données (5 folds), comme pour le découpage apprentissage/test.
+L'ensemble de données d'apprentissage est découpé en 5 sous ensembles de données (5 folds), de la même façon que pour le découpage apprentissage/test.
 
-Comme les poids des couches d'un
+Pour un ensemble d'hyperparamètres fixés, j'entraîne alors un modèle de réseau de neurones sur 4 folds, puis j'évalue ses performances sur le dernier fold, l'ensemble de données de validation.  
+Le score utilisé ici qui permet d'évaluer la performance d'un modèle est le [**F1 score**](https://en.wikipedia.org/wiki/F-score). J'ai aussi regardé d'autres mesures comme [l'accuracy](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification), [la précision ou encore le rappel](https://en.wikipedia.org/wiki/Precision_and_recall).
+
+Les poids des couches de neurones d'un modèle de réseau de neurones sont initialisés aléatoirement. Ceci fait qu'avec un même ensemble d'hyperparamètres (donc la même architecture) et les mêmes données d'entraînement, deux modèles verront leur poids actualisés différemment lors de l'entraînement et auront *in fine* des performances différentes.
+
+Connaissant cette contrainte, j'ai choisi donc d'entraîner 5 modèles sur 4 folds pour les évaluer sur le dernier. Ce procédé est fait pour chaque combinaison possible de 4 folds parmi les 5. Je me retrouve donc avec 25 modèles entraînés. Pour chaque fold, je prends le meilleur score par combinaison de fold : 5 scores au total. En faisant la moyenne de ces 5 scores, j'obtiens le score moyen pour l'ensemble d'hyperparamètres fixés au départ.
+
+Ce procédé de validation croisée est coûteux en temps (dure plusieurs jours selon les hyperparamètres). Afin d'éviter d'avoir à le faire pour chacune des $5 \times 7 \times 10 \times 6 = 2100$ combinaisons d'hyperparamètres possibles (sans compter l'architecture du modèle), j'ai supposé que la valeur sélectionnée pour un hyperparamètre l'aurait été quelque soit la valeur des autres hyperparamètres. Ainsi, en sélectionnant par exemple l'algorithme Adam comme meilleur algorithme d'optimisation (d'après le F1 score moyen sur les données de validation), je suppose que quelque soit l'architecture du réseau, ce sera le meilleur choix d'algorithme d'optimisation.
+
+Le procédé de validation croisée est représenté [dans ce schéma](img/cross_validation_step.png).
 
 # Résultats
+
+Au terme de la sélection par validation croisée 5-Folds, j'ai trouvé deux architectures de réseau de neurones qui obtient un F1 score moyen supérieur à 95% sur les données de validation. La première architecture prend en entrée les deux voies (auriculaire et ventriculaire) d'un EGM, avec un padding à 8192. Elle comporte successivement :
+ - 2 couches de convolution
+ - 2 couches "ResNet" (convolution avec une connection résiduelle)
+ - 6 couches denses complètement connectées
+ - une couche linéaire renvoyant la probabilité que l'EGM appartienne à la classe 1 et celle qu'il appartienne à la classe 0.
+
+La seconde architecture ne prend en entrée que la voie auriculaire de l'EGM, avec un padding à 8192. celle-ci se décompose en :
+ - 2 couches de convolution
+ - 3 couches "ResNet"
+ - 2 couches denses complètement connectées
+ - une couche linéaire renvoyant la probabilité que l'EGM appartienne à la classe 1 et celle qu'il appartienne à la classe 0.
+
+Les hyperparamètres sélectionnés pour chaque architecture se trouvent dans ce tableau :
+|  | Arch. à 2 voies | Arch. à 1 voie |
+|--|--|--|
+| Algorithme d'optimisation | Adam | Adam |
+| Taux d'apprentissage | 0.001 | 0.001 |
+| Taille des batchs | 64 | 16 |
+| Poids associé à la classe 1 | $2/3$ | $2/3$ |  
+
+J'ai ensuite entraîné des modèles avec ces architectures et leur ensemble d'hyperparamètres sur la totalité des données d'apprentissage. Puis je les ai évalué sur l'ensemble de données test afin de sélectionner le modèle avec le meilleur F1 score (sur les données de test) par architecture. Les meilleurs modèles ont obtenu ces scores sur les données de test : 
+|  | Arch. à 2 voies | Arch. à 1 voie |
+|--|--|--|
+| F1 score | 0.9290 | 0.9594 |
+| Accuracy | 0.9683 | 0.9817 |
+| Taux de vrais positifs | 0.9769 | 0.9892 |
+| Taux de vrais négatifs | 0.9379 | 0.9558 |
+| Valeur prédictive positive | 0.9822 | 0.9871 |
+| Valeur prédictive négative | 0.9203 | 0.9629 |
+| Balanced accuracy | 0.9574 | 0.9725 |
+
+# Déployement 
+
+flask
