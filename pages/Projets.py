@@ -3,35 +3,16 @@ import streamlit as st
 
 
 def st_write_content(content: str):
-
+    
     textblock = [elt for elt in content.split("<img>") if elt and elt!="\n"]
-
-    if len(textblock) > 1:
-        col1, col2 = st.columns(2)
-        for block in textblock[0::2]:
-            if block.startswith("img/"):
-                img, caption, width = block.split("|")
-                width = int(width) if width else None
-                col1.image(img, caption=caption, width=width)
-            else:
-                col1.markdown(block)
-
-        for block in textblock[1::2]:
-            if block.startswith("img/"):
-                img, caption, width = block.split("|")
-                width = int(width) if width else None
-                col2.image(img, caption=caption, width=width)
-            else:
-                col2.markdown(block)
-
-    else:
-        for block in textblock:
-            if block.startswith("img/"):
-                img, caption, width = block.split("|")
-                width = int(width) if width else None
-                st.image(img, caption=caption, width=width)
-            else:
-                st.markdown(block)
+    
+    for block in textblock:
+        if block.startswith("img/"):
+            img, caption, width = block.split("|")
+            width = int(width) if width else None
+            st.image(img, caption=caption, width=width)
+        else:
+            st.markdown(block)
 
 
 def st_write_select(filename: str):
