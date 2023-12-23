@@ -1,9 +1,11 @@
 # Contexte
+
 Dans le cadre de mon [Master MAS](/Formations), j'ai dû effectuer un stage d'une durée de 4 à 6 mois en entreprise. Je l'ai donc effectué à l'IHU Liryc sous la tutelle du professeur Rémi Dubois.
 
 Pour présenter rapidement le Liryc, il s'agit d'un Institut Hospitalo Universitaire (IHU) situé dans le complexe hospitalier Xavier Arnozan à Pessac dédié à la recherche sur le cœur, son fonctionnement et les pathologies du rythme cardiaque. Il compte plusieurs équipes aux spécialités variées qui travaillent à faire progresser les avancées scientifiques dans le domaine du cœur.
 
 # Problématique
+
 Des défibrillateurs sont implantés chez des patients souffrant de pathologies du rythme cardiaque. Grâce à leur algorithme embarqué, ces défibrillateurs surveillent l'activité cardiaque des patients et peuvent appliquer une thérapie si nécessaire. Les tracés de l'activité électrique du cœur des patients, mesurée à la surface de l'organe, sont appelés des **électrogrammes** (EGM) et sont remontés aux constructeurs des défibrillateurs puis récupérés par le Centre Hospitalier Universitaire (CHU) de Bordeaux pour des analyses ultérieures.  
 Parmi les pathologies cardiaques remontées par le défibrillateur, la fibrillation auriculaire (FA) n'est pas traitée par ce dernier. Or, un signal bruité ou un rythme cardiaque rapide peut être pensé comme conséquence d'une fibrillation auriculaire : l'appareil détectera alors "à tort" une FA au lieu de la bonne pathologie. Ceci peut aussi traduire un dysfonctionnement du défibrillateur. Dans les deux cas, le patient encourt de potentielles graves conséquences.  
 Afin de différencier les vraies FA de celles détectées à tort sur les EGM, des médecins ont été embauchés pour faire le tri. Sur des échantillons de plus de 10,000 enregistrements, on devine que cette étape de classification manuelle requiert énormément de temps.
@@ -11,11 +13,14 @@ Afin de différencier les vraies FA de celles détectées à tort sur les EGM, d
 Au sein de l'équipe de traitement du signal, je suis donc chargé, au cours de ce stage, de trouver une développer un algorithme basé sur une stratégie de Machine Learning permettant d'automatiser cette classification d'EGM.
 
 # Données utilisées
+
 La base de données que j'ai utilisé comporte 10,172 électrogrammes, possédant chacun deux composantes : l'activité électrique (au cours du temps) au niveau des oreillettes (voie auriculaire) et au niveau des ventricules (voie ventriculaire). Parmi ces 10,172 enregistrements labellisés manuellement par 3 médecins différents, on compte :
  - 8057 de classe 1 (l'EGM présente bien une FA);
  - 2115 de classe 0 (l'EGM ne présente pas de FA).
 
 La longueur des EGM varie entre 513 et 5137 points de données.
+
+<img>img/af_algo.png|Exemple d'EGM : la voie auriculaire est tracée en noir et la voie ventriculaire en bleu. Les évènements cardiaques détectés par l'appareil sont dénotés par des marqueurs sur l'axe en bas.|300<img>
 
 Les données des EGM sont stockés dans une arborescence sur le serveur du Liryc sous la forme suivante :  
 ├── dossier_EGM  
@@ -23,8 +28,6 @@ Les données des EGM sont stockés dans une arborescence sur le serveur du Liryc
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <EGM_classe_0.txt>  
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── 1  
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <EGM_classe_1.txt>  
-
-<img>img/af_algo.png|Exemple d'EGM : la voie auriculaire est tracée en noir et la voie ventriculaire en bleu. Les évènements cardiaques détectés par l'appareil sont dénotés par des marqueurs sur l'axe en bas.|<img>
 
 # Méthodologie
 
@@ -72,7 +75,7 @@ Connaissant cette contrainte, j'ai choisi donc d'entraîner 5 modèles sur 4 fol
 
 Ce procédé de validation croisée est coûteux en temps (dure plusieurs jours selon les hyperparamètres). Afin d'éviter d'avoir à le faire pour chacune des $5 \times 7 \times 10 \times 6 = 2100$ combinaisons d'hyperparamètres possibles (sans compter l'architecture du modèle), j'ai supposé que la valeur sélectionnée pour un hyperparamètre l'aurait été quelque soit la valeur des autres hyperparamètres. Ainsi, en sélectionnant par exemple l'algorithme Adam comme meilleur algorithme d'optimisation (d'après le F1 score moyen sur les données de validation), je suppose que quelque soit l'architecture du réseau, ce sera le meilleur choix d'algorithme d'optimisation.
 
-Le procédé de validation croisée est représenté [dans ce schéma](img/cross_validation_step.png).
+<img>img/cross_validation.svg|Schéma du procédé de validation croisée 5-Folds appliqué pour obtenir le F1 score moyen d'une architecture avec son ensemble d'hyperparamètres sur les données de validation|<img>
 
 # Résultats
 
