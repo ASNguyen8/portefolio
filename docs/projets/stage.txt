@@ -112,4 +112,12 @@ J'ai ensuite entraîné des modèles avec ces architectures et leur ensemble d'h
 
 # Déployement 
 
-flask
+Après avoir développé les modèles de réseaux de neurones, je les ai intégré à une application web en utilisant la librairie `Flask` afin de permettre à l'IHU Liryc de pouvoir s'en servir facilement dans le futur.
+
+On passe à l'application un enregistrement d'électrogramme sous forme de fichier `.txt` OU une archive `.zip` contenant des enregistrements d'électrogrammes (aussi en fichier `.txt`).  
+Les données passées à l'application sont traitées (padding à 8192, normalisées) puis passées aux deux modèles. Ces derniers renvoient les probabilités d'appartenir à chaque classe.  
+Si on a passé un seul fichier `.txt` en entrée, les prédictions des modèles seront affichées sur l'interface web directement. Dans le cas contraire, les prédictions sont enregistrées dans un fichier `.csv` qui peut être téléchargé.
+
+<img>img/workflow_pred.png|Schéma du fonctionnement de l'application Flask : les prédictions sont soit affichées sur l'interface web, soit envoyées dans un fichier CSV à télécharger.|<img>
+
+L'application est utilisable est peut être déployée sur le serveur de l'établissement.

@@ -35,6 +35,8 @@ c2.markdown("""
 [![Page GitHub](https://img.icons8.com/material-outlined/48/000000/github.png)](https://github.com/ASNguyen8)
 """)
 
-st.title("Compétences")
+st.title("Page en construction :(")
 
-st.title("Outils")
+# st.title("Compétences")
+
+# st.title("Outils")
