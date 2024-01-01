@@ -36,7 +36,3 @@ c2.markdown("""
 """)
 
 st.title("Page en construction :(")
-
-# st.title("Compétences")
-
-# st.title("Outils")
