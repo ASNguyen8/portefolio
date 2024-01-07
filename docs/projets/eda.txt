@@ -1,0 +1,14 @@
+En reprenant le code de [Chanin Nantasenamat](https://medium.com/@chanin.nantasenamat) (aka [Data Professor](http://youtube.com/dataprofessor)), j'ai conçu une application web pour faire explorer les données d'un fichier `.csv`.
+
+En important le fichier depuis votre machine ou en indiquant l'URL du fichier sur le web, sans oublier d'indiquer le séparateur du csv (la virgule par défaut), on peut dans un premier temps visualiser le fichier sur l'application.
+
+Ensuite, grâce à la librairie `pandas-profiling` de `Python, un rapport est généré et affiché sur la page web. Ce rapport contient des informations sur les données, leur type, la proportion de données manquantes, des statistiques descriptives (moyenne, minimum, etc.) et divers graphiques. Ce rapport permet d'apprécier qualitativement les données du fichier rapidement.
+
+Enfin, j'ai codé une pipeline qui permet de transformer les données du fichier :
+ - [standardisation](https://fr.wikipedia.org/wiki/Cote_Z_(statistiques)) des données numériques
+ - [encodage one-hot](https://fr.wikipedia.org/wiki/Encodage_one-hot)
+ - suppression de colonnes de données
+ - (optionnel) générer un fichier `.csv` contenant les statistiques descriptives de chaque colonne, des graphes décrivant chaque colonne et un graphe décrivant les données manquantes
+
+Finalement, cette pipeline renvoie un fichier `.zip` à télécharger, contenant le CSV original et la version transformée.
+_ _ _

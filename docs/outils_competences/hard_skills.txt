@@ -1,0 +1,26 @@
+Python
+SQL
+R
+HTML
+CSS
+Javascript
+Machine Learning
+Deep Learning
+Régression Linéaire
+Régression Logistique
+Statistiques
+Probabilité
+Modélisation Statistiques
+Processus Stochastique
+Flask
+PyTorch
+Tensorflow
+Flask
+Django
+Analyse de données
+Rédaction de rapport technique
+Git
+PHP
+Streamlit
+Anglais (B2)
+Data Science

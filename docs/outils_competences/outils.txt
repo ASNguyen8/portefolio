@@ -1,0 +1,11 @@
+PyCharm
+Jupyter Notebook
+Visual Studio Code
+PostGreSQL
+MySQL
+Word
+Excel
+Powerpoint
+Overleaf
+MongoDB
+GitHub

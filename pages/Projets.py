@@ -82,6 +82,11 @@ with st.expander("Stage de fin de master (du 20 Février 2023 au 20 Juillet 2023
             data=file.read(), file_name="soutenance_stage_Alexandre_NGUYEN.pdf"
             )
 
+with st.expander("Statistiques exploratoire"):
+    with open("docs/projets/eda.txt", encoding='utf-8') as file:
+        st_write_content(file.read())
+    st.link_button("Lien vers l'application", "https://eda-csv.streamlit.app/")
+
 # with st.expander("Projet OpenData"):
 #     st_write_file("open_data.txt")
 #     st.link_button("Voir le rapport d'analyse", "docs/FACCI_NGUYEN_rapport_projetOpenData.html")

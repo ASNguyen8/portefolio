@@ -1,5 +1,19 @@
 import streamlit as st
 
+
+def display_buttons(filepath: str, ncols: int=4, emphasis: bool=False):
+
+    with open(filepath, "rt", encoding='utf-8') as file:
+        content = [elt for elt in set(file.read().split("\n")) if elt]
+    
+    btn_type = "primary" if emphasis else "secondary"
+
+    content.sort()
+    columns = st.columns(ncols)
+    for i, elt in enumerate(content):
+        columns[i%ncols].button(elt, use_container_width=True, type=btn_type)
+
+
 st.set_page_config(
     page_title="Portefolio/Outils&Compétences",
     page_icon="🗃️",
@@ -35,4 +49,12 @@ c2.markdown("""
 [![Page GitHub](https://img.icons8.com/material-outlined/48/000000/github.png)](https://github.com/ASNguyen8)
 """)
 
-st.title("Page en construction :(")
+st.header("Outils")
+st.markdown("Sont listés ici tous les logiciels que j'ai pu maîtriser, notamment au cours de [ma formation](/Formations).")
+display_buttons("docs/outils_competences/outils.txt")
+
+st.header("Compétences")
+st.markdown("### Hard Skills")
+display_buttons("docs/outils_competences/hard_skills.txt", emphasis=True)
+st.markdown("### Soft Skills")
+display_buttons("docs/outils_competences/soft_skills.txt")
